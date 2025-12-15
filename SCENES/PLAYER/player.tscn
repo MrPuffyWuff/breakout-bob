@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://btfqdlgpskid3"]
+
+[ext_resource type="Script" uid="uid://buhcf5yfio8uj" path="res://SCENES/PLAYER/player.gd" id="1_66ohg"]
+[ext_resource type="Texture2D" uid="uid://bnphki4fd3bj" path="res://ASSET/Bob/Bob.png" id="2_ool75"]
+[ext_resource type="PackedScene" uid="uid://48x54s3smqkg" path="res://SCENES/PADDLE/paddle.tscn" id="3_todxl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ool75"]
+size = Vector2(8, 39)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_66ohg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("2_ool75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ool75")
+
+[node name="Paddle" parent="." instance=ExtResource("3_todxl")]

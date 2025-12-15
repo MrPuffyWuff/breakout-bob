@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvbc42wpy3yx5"]
+
+[ext_resource type="PackedScene" uid="uid://dosm4qiu40ok5" path="res://SCENES/GAME/game.tscn" id="1_n2i1s"]
+[ext_resource type="PackedScene" uid="uid://cxeng48cqpdou" path="res://SCENES/UI/INVENTORY/inventory.tscn" id="2_1xfn7"]
+
+[node name="Main" type="Node2D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Game" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_n2i1s")]
+
+[node name="Inventory" parent="." instance=ExtResource("2_1xfn7")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 960.0
+offset_bottom = 540.0

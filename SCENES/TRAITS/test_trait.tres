@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BaseTrait" load_steps=2 format=3 uid="uid://dmyrnb2kph2vq"]
+
+[ext_resource type="Script" uid="uid://d4misovx4kv5s" path="res://SCENES/TRAITS/base_trait.gd" id="1_7ncy2"]
+
+[resource]
+script = ExtResource("1_7ncy2")
+metadata/_custom_type_script = "uid://d4misovx4kv5s"

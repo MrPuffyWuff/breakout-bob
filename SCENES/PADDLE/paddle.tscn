@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://48x54s3smqkg"]
+
+[ext_resource type="Texture2D" uid="uid://kk11mhkimcbe" path="res://ASSET/Paddle/paddle_rotations.png" id="1_hoop0"]
+[ext_resource type="Script" uid="uid://dropk7dt50gr5" path="res://SCENES/PADDLE/paddle.gd" id="1_wypjt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wypjt"]
+size = Vector2(26, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntgwg"]
+atlas = ExtResource("1_hoop0")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm151"]
+atlas = ExtResource("1_hoop0")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afnj4"]
+atlas = ExtResource("1_hoop0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6br2b"]
+atlas = ExtResource("1_hoop0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wypjt"]
+atlas = ExtResource("1_hoop0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi7h1"]
+atlas = ExtResource("1_hoop0")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cirmn"]
+atlas = ExtResource("1_hoop0")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q03ah"]
+atlas = ExtResource("1_hoop0")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kh747"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntgwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm151")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afnj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6br2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wypjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi7h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cirmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q03ah")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Paddle" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource("1_wypjt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wypjt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kh747")
